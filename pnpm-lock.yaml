@@ -11,9 +11,24 @@ dependencies:
   "@tailwindcss/vite":
     specifier: ^4.1.17
     version: 4.1.17(rolldown-vite@7.2.5)
+  "@vueuse/core":
+    specifier: ^14.0.0
+    version: 14.0.0(vue@3.5.24)
+  class-variance-authority:
+    specifier: ^0.7.1
+    version: 0.7.1
+  clsx:
+    specifier: ^2.1.1
+    version: 2.1.1
+  lucide-vue-next:
+    specifier: ^0.554.0
+    version: 0.554.0(vue@3.5.24)
   reka-ui:
     specifier: ^2.6.0
     version: 2.6.0(typescript@5.9.3)(vue@3.5.24)
+  tailwind-merge:
+    specifier: ^3.4.0
+    version: 3.4.0
   tailwindcss:
     specifier: ^4.1.17
     version: 4.1.17
@@ -878,10 +893,31 @@ packages:
       - typescript
     dev: false
 
+  /@vueuse/core@14.0.0(vue@3.5.24):
+    resolution:
+      {
+        integrity: sha512-d6tKRWkZE8IQElX2aHBxXOMD478fHIYV+Dzm2y9Ag122ICBpNKtGICiXKOhWU3L1kKdttDD9dCMS4bGP3jhCTQ==,
+      }
+    peerDependencies:
+      vue: ^3.5.0
+    dependencies:
+      "@types/web-bluetooth": 0.0.21
+      "@vueuse/metadata": 14.0.0
+      "@vueuse/shared": 14.0.0(vue@3.5.24)
+      vue: 3.5.24(typescript@5.9.3)
+    dev: false
+
   /@vueuse/metadata@12.8.2:
     resolution:
       {
         integrity: sha512-rAyLGEuoBJ/Il5AmFHiziCPdQzRt88VxR+Y/A/QhJ1EWtWqPBBAxTAFaSkviwEuOEZNtW8pvkPgoCZQ+HxqW1A==,
+      }
+    dev: false
+
+  /@vueuse/metadata@14.0.0:
+    resolution:
+      {
+        integrity: sha512-6yoGqbJcMldVCevkFiHDBTB1V5Hq+G/haPlGIuaFZHpXC0HADB0EN1ryQAAceiW+ryS3niUwvdFbGiqHqBrfVA==,
       }
     dev: false
 
@@ -894,6 +930,17 @@ packages:
       vue: 3.5.24(typescript@5.9.3)
     transitivePeerDependencies:
       - typescript
+    dev: false
+
+  /@vueuse/shared@14.0.0(vue@3.5.24):
+    resolution:
+      {
+        integrity: sha512-mTCA0uczBgurRlwVaQHfG0Ja7UdGe4g9mwffiJmvLiTtp1G4AQyIjej6si/k8c8pUwTfVpNufck+23gXptPAkw==,
+      }
+    peerDependencies:
+      vue: ^3.5.0
+    dependencies:
+      vue: 3.5.24(typescript@5.9.3)
     dev: false
 
   /alien-signals@3.1.0:
@@ -911,6 +958,23 @@ packages:
     engines: { node: ">=10" }
     dependencies:
       tslib: 2.8.1
+    dev: false
+
+  /class-variance-authority@0.7.1:
+    resolution:
+      {
+        integrity: sha512-Ka+9Trutv7G8M6WT6SeiRWz792K5qEqIGEGzXKhAE6xOWAY6pPH8U+9IY3oCMv6kqTmLsv7Xh/2w2RigkePMsg==,
+      }
+    dependencies:
+      clsx: 2.1.1
+    dev: false
+
+  /clsx@2.1.1:
+    resolution:
+      {
+        integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==,
+      }
+    engines: { node: ">=6" }
     dev: false
 
   /csstype@3.2.3:
@@ -1138,6 +1202,17 @@ packages:
       lightningcss-win32-arm64-msvc: 1.30.2
       lightningcss-win32-x64-msvc: 1.30.2
 
+  /lucide-vue-next@0.554.0(vue@3.5.24):
+    resolution:
+      {
+        integrity: sha512-nDchDVm/J3mv+7aYtDh7aLkeBVtzDNyaelKEOlhAE0MKMtDfB9fFatx2siqZUBYhLHjMK5DZnaAC/ODT9vQ63Q==,
+      }
+    peerDependencies:
+      vue: ">=3.0.1"
+    dependencies:
+      vue: 3.5.24(typescript@5.9.3)
+    dev: false
+
   /magic-string@0.30.21:
     resolution:
       {
@@ -1318,6 +1393,13 @@ packages:
         integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==,
       }
     engines: { node: ">=0.10.0" }
+
+  /tailwind-merge@3.4.0:
+    resolution:
+      {
+        integrity: sha512-uSaO4gnW+b3Y2aWoWfFpX62vn2sR3skfhbjsEnaBI81WD1wBLlHZe5sWf0AqjksNdYTbGBEd0UasQMT3SNV15g==,
+      }
+    dev: false
 
   /tailwindcss@4.1.17:
     resolution:
