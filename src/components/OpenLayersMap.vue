@@ -8,6 +8,7 @@ import { type Coordinate } from "ol/coordinate";
 import { fromLonLat } from "ol/proj";
 import TileLayer from "ol/layer/Tile";
 import { OSM } from "ol/source";
+import { createOpenLayersAdapter } from "@/multimaplib/adapters.ts";
 
 interface Props {
   center?: Coordinate;
@@ -47,7 +48,9 @@ onMounted(async () => {
     }),
   });
 
-  emit("ready", olMap);
+  const adapter = createOpenLayersAdapter(olMap);
+
+  emit("ready", adapter);
 });
 
 onUnmounted(() => {
@@ -58,15 +61,3 @@ onUnmounted(() => {
 <template>
   <div ref="mapRoot" class="h-full w-full" />
 </template>
-
-<style>
-@reference "tailwindcss";
-.ol-rotate {
-  top: 5.5em;
-  right: 0.5em;
-}
-
-.ol-zoom {
-  @apply top-[unset] right-2 bottom-12 left-[unset] sm:bottom-10;
-}
-</style>
