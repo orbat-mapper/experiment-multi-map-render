@@ -23,12 +23,18 @@ onMounted(async () => {
     animation: false,
     navigationHelpButton: false,
     fullscreenButton: false,
-    baseLayer: new Cesium.ImageryLayer(
-      new Cesium.OpenStreetMapImageryProvider({
-        url: "https://tile.openstreetmap.org/",
-      }),
-    ),
+    baseLayer: false,
   });
+
+  // Add OSM imagery layer
+  const osmImageryProvider = new Cesium.UrlTemplateImageryProvider({
+    url: "https://a.tile.openstreetmap.org/{z}/{x}/{y}.png",
+    credit: new Cesium.Credit(
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    ),
+    maximumLevel: 19,
+  });
+  cesiumViewer.imageryLayers.addImageryProvider(osmImageryProvider);
 
   // Set initial camera position
   cesiumViewer.camera.setView({
