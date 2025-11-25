@@ -49,8 +49,10 @@ export function createCesiumAdapter(cesiumViewer: CesiumViewer): MapAdapter {
   return {
     goToPosition(location: Position, zoom: number) {
       // Convert zoom level to Cesium camera height (approximate conversion)
-      // Higher zoom = lower altitude; zoom 0 ≈ 20,000,000m, zoom 20 ≈ 100m
-      const height = 40000000 / Math.pow(2, zoom);
+      // Higher zoom = lower altitude; zoom 0 ≈ 40,000km, zoom 20 ≈ ~38m
+      // Base altitude at zoom 0 in meters
+      const BASE_ALTITUDE_METERS = 40_000_000;
+      const height = BASE_ALTITUDE_METERS / Math.pow(2, zoom);
       const lng = location[0] ?? 0;
       const lat = location[1] ?? 0;
       cesiumViewer.camera.flyTo({
