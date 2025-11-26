@@ -18,6 +18,16 @@ const mlMap = shallowRef<MapWrapper>();
 const leafletMap = shallowRef<MapWrapper>();
 const globeGLMap = shallowRef<MapWrapper>();
 
+const cities: Array<{ name: string; coord: [number, number] }> = [
+  { name: "Tromsø", coord: [18.9553, 69.6496] },
+  { name: "Stockholm", coord: [18.0686, 59.3293] },
+  { name: "Cape Town", coord: [18.4241, -33.9249] },
+  { name: "Vancouver", coord: [-123.1216, 49.2827] },
+  { name: "Tokyo", coord: [139.6917, 35.6895] },
+  { name: "Sydney", coord: [151.2093, -33.8688] },
+  { name: "Rio de Janeiro", coord: [-43.1729, -22.9068] },
+];
+
 function onOpenLayersMapReady(adapter: MapAdapter) {
   olMap.value = createMapWrapper(adapter);
 }
@@ -35,31 +45,45 @@ function onGlobeGLMapReady(adapter: MapAdapter) {
 }
 
 function goToPosition(coord: [number, number], zoom: number) {
-  olMap.value?.goToPosition(coord, zoom);
-  mlMap.value?.goToPosition(coord, zoom);
-  leafletMap.value?.goToPosition(coord, zoom);
-  globeGLMap.value?.goToPosition(coord, zoom);
+  const wrappers = [olMap, mlMap, leafletMap, globeGLMap];
+  for (const wrapper of wrappers) {
+    wrapper.value?.goToPosition(coord, zoom);
+  }
 }
 </script>
 
 <template>
   <div class="h-full w-full bg-background">
-    <ResizablePanelGroup direction="horizontal" class="h-full w-full">
-      <ResizablePanel :default-size="20" class="">
+    <ResizablePanelGroup
+      direction="horizontal"
+      class="h-full w-full"
+      autoSaveId="map-grid-layout1"
+    >
+      <ResizablePanel :default-size="20" class="@container">
         <div class="flex items-center justify-center">
           <span class="font-semibold">Multi map render</span>
         </div>
-        <div v-if="olMap && mlMap && leafletMap && globeGLMap" class="p-4">
-          <Button @click="goToPosition([10, 10], 4)">Fly to 10,10</Button>
-          <Button @click="goToPosition([-10, 10], 12)">Fly to -10,10</Button>
-          <Button @click="goToPosition([25, 71], 6)">Fly to 25,71</Button>
+        <div
+          v-if="olMap && mlMap && leafletMap && globeGLMap"
+          class="grid grid-cols-2 @sm:grid-cols-3 @md:grid-cols-4 gap-2 p-2"
+        >
+          <Button
+            v-for="city in cities"
+            :key="city.name"
+            class=""
+            @click="goToPosition(city.coord, 5)"
+            >{{ city.name }}</Button
+          >
         </div>
       </ResizablePanel>
       <ResizableHandle />
       <ResizablePanel :default-size="50">
-        <ResizablePanelGroup direction="vertical">
+        <ResizablePanelGroup direction="vertical" autoSaveId="map-grid-layout2">
           <ResizablePanel :default-size="50">
-            <ResizablePanelGroup direction="horizontal">
+            <ResizablePanelGroup
+              direction="horizontal"
+              autoSaveId="map-grid-layout3"
+            >
               <ResizablePanel :default-size="50">
                 <MaplibreMap @ready="onMaplibreMapReady" />
               </ResizablePanel>
@@ -71,7 +95,10 @@ function goToPosition(coord: [number, number], zoom: number) {
           </ResizablePanel>
           <ResizableHandle />
           <ResizablePanel :default-size="50">
-            <ResizablePanelGroup direction="horizontal">
+            <ResizablePanelGroup
+              direction="horizontal"
+              autoSaveId="map-grid-layout4"
+            >
               <ResizablePanel :default-size="50">
                 <OpenLayersMap @ready="onOpenLayersMapReady" />
               </ResizablePanel>
