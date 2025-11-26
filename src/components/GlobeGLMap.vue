@@ -17,8 +17,12 @@ onMounted(async () => {
   });
 
   globe
-    .globeImageUrl("//unpkg.com/three-globe/example/img/earth-blue-marble.jpg")
-    .bumpImageUrl("//unpkg.com/three-globe/example/img/earth-topology.png")
+    .globeImageUrl(
+      "https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg",
+    )
+    .bumpImageUrl(
+      "https://unpkg.com/three-globe/example/img/earth-topology.png",
+    )
     .backgroundColor("rgba(0,0,0,0)");
 
   // Set initial point of view
@@ -29,6 +33,7 @@ onMounted(async () => {
 });
 
 onUnmounted(() => {
+  // _destructor is the cleanup method exposed by globe.gl (kapsule-based component)
   globeInstance.value?._destructor();
 });
 </script>
