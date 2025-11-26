@@ -18,7 +18,7 @@ The project provides adapter interfaces for the following mapping libraries:
 - **OpenLayers** (`ol`)
 - **MapLibre GL** (`maplibre-gl`)
 - **Leaflet** (`leaflet`)
-- **Cesium** (`cesium`)
+- **globe.gl** (`globe.gl`)
 
 ## Project Structure
 
