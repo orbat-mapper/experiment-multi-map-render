@@ -25,7 +25,7 @@ function updateGlobeSize() {
 }
 
 onMounted(async () => {
-  const container = mapContainerElement.value as HTMLElement;
+  const container = mapContainerElement.value as unknown as HTMLElement;
 
   // Wait for next tick to ensure container has dimensions
   await nextTick();
@@ -46,7 +46,10 @@ onMounted(async () => {
     .bumpImageUrl(
       "https://unpkg.com/three-globe/example/img/earth-topology.png",
     )
-    .backgroundColor("rgba(0,0,0,0)");
+    .backgroundImageUrl(
+      "//cdn.jsdelivr.net/npm/three-globe/example/img/night-sky.png",
+    );
+  //.backgroundColor("rgba(0,0,0,0)");
 
   // Set initial point of view
   globe.pointOfView({ lat: 0, lng: 0, altitude: 2.5 });

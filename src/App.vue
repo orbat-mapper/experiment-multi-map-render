@@ -50,7 +50,7 @@ function goToPosition(coord: [number, number], zoom: number) {
           <span class="font-semibold">Multi map render</span>
         </div>
         <div v-if="olMap && mlMap && leafletMap && globeGLMap" class="p-4">
-          <Button @click="goToPosition([10, 10], 12)">Fly to 10,10</Button>
+          <Button @click="goToPosition([10, 10], 4)">Fly to 10,10</Button>
           <Button @click="goToPosition([-10, 10], 12)">Fly to -10,10</Button>
           <Button @click="goToPosition([25, 71], 6)">Fly to 25,71</Button>
         </div>
