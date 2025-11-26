@@ -3,7 +3,7 @@ import type { Map as OLMap } from "ol";
 import { fromLonLat } from "ol/proj";
 import type { LngLatLike, Map as MlMap } from "maplibre-gl";
 import type { Map as LMap } from "leaflet";
-import { Cartesian3, type Viewer as CesiumViewer } from "cesium";
+import type { GlobeInstance } from "globe.gl";
 
 export type MapAdapter = {
   goToPosition(location: Position, zoom: number): void;
@@ -45,20 +45,18 @@ export function createLeafletAdapter(leafletMap: LMap): MapAdapter {
   };
 }
 
-export function createCesiumAdapter(cesiumViewer: CesiumViewer): MapAdapter {
+export function createGlobeGLAdapter(globe: GlobeInstance): MapAdapter {
   return {
     goToPosition(location: Position, zoom: number) {
-      // Convert zoom level to Cesium camera height (approximate conversion)
-      // Higher zoom = lower altitude; zoom 0 ≈ 40,000km, zoom 20 ≈ ~38m
-      // Base altitude at zoom 0 in meters
-      const BASE_ALTITUDE_METERS = 40_000_000;
-      const height = BASE_ALTITUDE_METERS / Math.pow(2, zoom);
+      // Convert zoom level to globe.gl altitude (in globe radii units).
+      // globe.gl uses altitude where 0 = surface, 1 = one globe radius above surface.
+      // Higher zoom = lower altitude. We divide zoom by 3 to get a reasonable
+      // visual mapping: zoom 0 → altitude ~4 (far away), zoom 18 → altitude ~0.06 (close up)
+      const BASE_ALTITUDE = 4;
+      const altitude = BASE_ALTITUDE / Math.pow(2, zoom / 3);
       const lng = location[0] ?? 0;
       const lat = location[1] ?? 0;
-      cesiumViewer.camera.flyTo({
-        destination: Cartesian3.fromDegrees(lng, lat, height),
-        duration: 0.9,
-      });
+      globe.pointOfView({ lat, lng, altitude }, 900);
     },
   };
 }
