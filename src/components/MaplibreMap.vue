@@ -2,7 +2,7 @@
 import { onMounted, onUnmounted, useTemplateRef } from "vue";
 import { GlobeControl, Map as MlMap, NavigationControl } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
-import { createMaplibreAdapter } from "@/multimaplib/adapters.ts";
+import { createMaplibreAdapter } from "@/multimaplib/adapters";
 
 const emit = defineEmits(["ready"]);
 

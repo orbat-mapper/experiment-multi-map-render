@@ -1,5 +1,5 @@
 import type { Position } from "geojson";
-import type { MapAdapter } from "@/multimaplib/adapters.ts";
+import type { MapAdapter } from "@/multimaplib/adapters";
 export type MapWrapper = {
   goToPosition(location: Position, zoom: number): void;
 };

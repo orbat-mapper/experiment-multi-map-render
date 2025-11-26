@@ -8,7 +8,7 @@ import MaplibreMap from "@/components/MaplibreMap.vue";
 import OpenLayersMap from "@/components/OpenLayersMap.vue";
 import LeafletMap from "@/components/LeafletMap.vue";
 import GlobeGLMap from "@/components/GlobeGLMap.vue";
-import type { MapAdapter } from "@/multimaplib/adapters.ts";
+import type { MapAdapter } from "@/multimaplib/adapters";
 import { shallowRef } from "vue";
 import { createMapWrapper, type MapWrapper } from "@/multimaplib/common.ts";
 import { Button } from "@/components/ui/button";

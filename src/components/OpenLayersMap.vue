@@ -8,7 +8,7 @@ import { type Coordinate } from "ol/coordinate";
 import { fromLonLat } from "ol/proj";
 import TileLayer from "ol/layer/Tile";
 import { OSM } from "ol/source";
-import { createOpenLayersAdapter } from "@/multimaplib/adapters.ts";
+import { createOpenLayersAdapter } from "@/multimaplib/adapters";
 
 interface Props {
   center?: Coordinate;

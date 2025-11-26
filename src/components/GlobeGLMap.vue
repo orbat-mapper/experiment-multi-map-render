@@ -7,7 +7,7 @@ import {
   nextTick,
 } from "vue";
 import Globe, { type GlobeInstance } from "globe.gl";
-import { createGlobeGLAdapter } from "@/multimaplib/adapters.ts";
+import { createGlobeGLAdapter } from "@/multimaplib/adapters";
 
 const emit = defineEmits(["ready"]);
 
@@ -16,7 +16,7 @@ const globeInstance = shallowRef<GlobeInstance>();
 let resizeObserver: ResizeObserver | null = null;
 
 function updateGlobeSize() {
-  const container = mapContainerElement.value as HTMLElement;
+  const container = mapContainerElement.value as unknown as HTMLElement;
   const globe = globeInstance.value;
   if (container && globe) {
     globe.width(container.clientWidth);

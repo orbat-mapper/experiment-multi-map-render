@@ -2,7 +2,7 @@
 import { onMounted, onUnmounted, useTemplateRef } from "vue";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-import { createLeafletAdapter } from "@/multimaplib/adapters.ts";
+import { createLeafletAdapter } from "@/multimaplib/adapters";
 
 const emit = defineEmits(["ready"]);
 
