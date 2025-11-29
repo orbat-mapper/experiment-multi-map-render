@@ -8,6 +8,7 @@ export function createOpenLayersAdapter(olMap: OLMap): MapAdapter {
   let animationVersion = 0;
 
   return {
+    name: "openlayers",
     goToPosition(location: Position, zoom: number) {
       // bump version to mark any previous animations as obsolete
       ++animationVersion;

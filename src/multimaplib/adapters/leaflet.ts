@@ -4,6 +4,7 @@ import type { MapAdapter } from "../types";
 
 export function createLeafletAdapter(leafletMap: LMap): MapAdapter {
   return {
+    name: "leaflet",
     goToPosition(location: Position, zoom: number) {
       const lat = location[1] ?? 0;
       const lng = location[0] ?? 0;

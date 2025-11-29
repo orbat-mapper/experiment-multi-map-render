@@ -4,6 +4,7 @@ import type { MapAdapter } from "../types";
 
 export function createGlobeGLAdapter(globe: GlobeInstance): MapAdapter {
   return {
+    name: "globe.gl",
     goToPosition(location: Position, zoom: number) {
       // Convert zoom level to globe.gl altitude (in globe radii units).
       // globe.gl uses altitude where 0 = surface, 1 = one globe radius above surface.

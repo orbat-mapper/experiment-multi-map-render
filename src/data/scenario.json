@@ -1,0 +1,630 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "Ev1wliqyqA",
+      "properties": {
+        "id": "Ev1wliqyqA",
+        "name": "HMS Endurance",
+        "shortName": "END",
+        "sidc": "10033000001205001900",
+        "description": "A Royal Navy ice patrol vessel that served from 1967 to 1991. ",
+        "reinforcedReduced": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-50.83016162572641, -51.52127438243896]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bW9e77jLCT",
+      "properties": {
+        "id": "bW9e77jLCT",
+        "name": "HMS Hermes",
+        "shortName": "HER",
+        "sidc": "10033000001201000000",
+        "reinforcedReduced": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-56.85900235304392, -52.658091731608685]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "EYRRLrKOXc",
+      "properties": {
+        "id": "EYRRLrKOXc",
+        "name": "HMS Invincible",
+        "shortName": "INV",
+        "sidc": "10033000001201000000",
+        "reinforcedReduced": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-56.8753530991987, -52.548624075593715]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "JlKcklgGEU",
+      "properties": {
+        "id": "JlKcklgGEU",
+        "name": "HMS Glamorgan",
+        "shortName": "GLA",
+        "sidc": "10033000001202030000",
+        "reinforcedReduced": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-55.65461695073419, -51.35225320235355]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "XFfDYeXpqD",
+      "properties": {
+        "id": "XFfDYeXpqD",
+        "name": "HMS Antrim",
+        "shortName": "ANT",
+        "sidc": "10033000001202030000",
+        "description": "",
+        "reinforcedReduced": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-51.126885653825305, -51.7559726884173]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Vvg9xmBKiG",
+      "properties": {
+        "id": "Vvg9xmBKiG",
+        "name": "HMS Sheffield",
+        "shortName": "SHE",
+        "sidc": "10033040001202030000",
+        "description": "",
+        "reinforcedReduced": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-53.84480815650268, -52.193210126916846]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "DNSpZc5oGg",
+      "properties": {
+        "id": "DNSpZc5oGg",
+        "name": "HMS Fearless",
+        "shortName": "FEA",
+        "sidc": "10033000001203010000",
+        "description": "",
+        "reinforcedReduced": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-59.139490323564374, -51.49727767960482]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BvwcW2uBrm",
+      "properties": {
+        "id": "BvwcW2uBrm",
+        "name": "HMS Intrepid",
+        "shortName": "INT",
+        "sidc": "10033000001203060000",
+        "description": "",
+        "reinforcedReduced": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-59.13777370979484, -51.509459015174215]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SQVUQ1npSg",
+      "properties": {
+        "id": "SQVUQ1npSg",
+        "name": "RFA Sir Tristram",
+        "shortName": "TRI",
+        "sidc": "10033000001203070000",
+        "reinforcedReduced": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-14.412079097123714, -7.966426950615244]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "me4LtjIhtM",
+      "properties": {
+        "id": "me4LtjIhtM",
+        "name": "HMS Broadsword",
+        "shortName": "BRO",
+        "sidc": "10033000001202040000",
+        "reinforcedReduced": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-59.186182218095624, -51.443170337741705]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "x5YDPVA2NF",
+      "properties": {
+        "id": "x5YDPVA2NF",
+        "name": "HMS Brilliant",
+        "shortName": "BRI",
+        "sidc": "10033000001202040000",
+        "reinforcedReduced": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-59.173822598955, -51.528258893873016]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "12ztMBWVbZ",
+      "properties": {
+        "id": "12ztMBWVbZ",
+        "name": "HMS Plymouth",
+        "shortName": "PLY",
+        "sidc": "10033000001202040000",
+        "reinforcedReduced": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-59.15184994270499, -51.49535401316384]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "RdAy81IXKY",
+      "properties": {
+        "id": "RdAy81IXKY",
+        "name": "HMS Argonaut",
+        "shortName": "ARG",
+        "sidc": "10033000001202040000",
+        "reinforcedReduced": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-59.19476528694327, -51.45172912901623]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "PyG1gvVYZt",
+      "properties": {
+        "id": "PyG1gvVYZt",
+        "name": "HMS Coventry",
+        "shortName": "COV",
+        "sidc": "10033000001202030000",
+        "reinforcedReduced": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-57.08456540236029, -52.290454629952876]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TmpkuOe9HA",
+      "properties": {
+        "id": "TmpkuOe9HA",
+        "name": "HMS Yarmouth",
+        "shortName": "YAR",
+        "sidc": "10033000001202040000",
+        "reinforcedReduced": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-59.16592617561515, -51.41577142400705]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "RIRCwVzPA9",
+      "properties": {
+        "id": "RIRCwVzPA9",
+        "name": "HMS Ardent",
+        "shortName": "ARD",
+        "sidc": "10033000001202040000",
+        "reinforcedReduced": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-59.1302206092089, -51.67774001315201]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ZbPGIYyCZA",
+      "properties": {
+        "id": "ZbPGIYyCZA",
+        "name": "HMS Antelope",
+        "shortName": "ALO",
+        "sidc": "10033000001202040000",
+        "reinforcedReduced": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-13.299950155875413, 8.466516614873044]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "z1VBMSDi8W",
+      "properties": {
+        "id": "z1VBMSDi8W",
+        "name": "SS Uganda",
+        "shortName": "",
+        "sidc": "10033000001301070000",
+        "description": "",
+        "reinforcedReduced": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-14.438863565524574, -7.9822286135872815]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "I9gwazz9du",
+      "properties": {
+        "id": "I9gwazz9du",
+        "name": "40 Cdo",
+        "shortName": "40",
+        "sidc": "10031000161211004600",
+        "reinforcedReduced": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-59.02439137031722, -51.575277987286114]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "qMsLMRj0el",
+      "properties": {
+        "id": "qMsLMRj0el",
+        "name": "42 Cdo",
+        "shortName": "42",
+        "sidc": "10031000161211004600",
+        "reinforcedReduced": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-58.991089063188305, -51.49850664621707]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1EoJikAifw",
+      "properties": {
+        "id": "1EoJikAifw",
+        "name": "45 Cdo",
+        "shortName": "45",
+        "sidc": "10031000161211004600",
+        "reinforcedReduced": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-59.08601780464338, -51.5648216429888]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ulsGPqOgtR",
+      "properties": {
+        "id": "ulsGPqOgtR",
+        "name": "2 Para",
+        "shortName": "2",
+        "sidc": "10031000161211000001",
+        "reinforcedReduced": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-59.01100178291491, -51.615373893500085]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "iFcRlZGNtz",
+      "properties": {
+        "id": "iFcRlZGNtz",
+        "name": "3 Para",
+        "shortName": "3",
+        "sidc": "10031000161211000001",
+        "reinforcedReduced": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-58.999843793412914, -51.49733111362477]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ksCBbvo0PD",
+      "properties": {
+        "id": "ksCBbvo0PD",
+        "name": "HMS Conqueror",
+        "shortName": "Conqueror",
+        "sidc": "10033500001101000006",
+        "reinforcedReduced": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-61.39035446861821, -55.54945374841025]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "W2ZO6vxg0q",
+      "properties": {
+        "id": "W2ZO6vxg0q",
+        "name": "ARA Cabo San Antonio",
+        "shortName": "CSA",
+        "sidc": "10033000001203070000",
+        "fillColor": "#aab074",
+        "reinforcedReduced": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-62.082969626339114, -38.92137309870187]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "AC8ZMWwYvR",
+      "properties": {
+        "id": "AC8ZMWwYvR",
+        "name": "ARA Comodoro Py",
+        "shortName": "CPY",
+        "sidc": "10033000001202030000",
+        "fillColor": "#aab074",
+        "reinforcedReduced": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-62.124558602371216, -38.921489637879176]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "KLFoTRFuAB",
+      "properties": {
+        "id": "KLFoTRFuAB",
+        "name": "ARA Comodoro Segui",
+        "shortName": "CSG",
+        "sidc": "10033000001202030000",
+        "fillColor": "#aab074",
+        "reinforcedReduced": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-62.10773578742981, -38.922558060636455]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "VDqHwIOuso",
+      "properties": {
+        "id": "VDqHwIOuso",
+        "name": "ARA Guerrico",
+        "shortName": "GUE",
+        "sidc": "10033000001202051900",
+        "fillColor": "#aab074",
+        "reinforcedReduced": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-36.49641, -54.285671]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "n4cQBRLpod",
+      "properties": {
+        "id": "n4cQBRLpod",
+        "name": "ARA Hipólito Bouchard",
+        "shortName": "HBO",
+        "sidc": "10033000001202030000",
+        "fillColor": "#aab074",
+        "reinforcedReduced": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-61.63404937672241, -55.41593008842774]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "57C8QDlA48",
+      "properties": {
+        "id": "57C8QDlA48",
+        "name": "ARA Piedra buena (D-29)",
+        "shortName": "PBU",
+        "sidc": "10033000001202030000",
+        "fillColor": "#aab074",
+        "reinforcedReduced": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-61.63648424785495, -55.382746901606005]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "5G3UQJUa9e",
+      "properties": {
+        "id": "5G3UQJUa9e",
+        "name": "ARA Santa Fe",
+        "shortName": "SFE",
+        "sidc": "10033500001101000000",
+        "fillColor": "#aab074",
+        "reinforcedReduced": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-61.986178639231525, -38.99540201865318]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "oRsy5ZvKZO",
+      "properties": {
+        "id": "oRsy5ZvKZO",
+        "name": "ARA Santisima Trinidad",
+        "shortName": "STR",
+        "sidc": "10033000001202030000",
+        "fillColor": "#aab074",
+        "reinforcedReduced": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-57.857437, -51.725912]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "v1MIvqTJkj",
+      "properties": {
+        "id": "v1MIvqTJkj",
+        "name": "ARA Veinticinco de Mayo",
+        "shortName": "VDM",
+        "sidc": "10033000001201000000",
+        "fillColor": "#aab074",
+        "reinforcedReduced": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-62.13382831672671, -38.910270227594424]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "StgaVQO18b",
+      "properties": {
+        "id": "StgaVQO18b",
+        "name": "ARA Drummond",
+        "shortName": "DRU",
+        "sidc": "10033000001202050000",
+        "fillColor": "#aab074",
+        "reinforcedReduced": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-62.01433110505183, -38.99967115754452]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "brruuJVSKS",
+      "properties": {
+        "id": "brruuJVSKS",
+        "name": "ARA Granville",
+        "shortName": "GRV",
+        "sidc": "10033000001202050000",
+        "fillColor": "#aab074",
+        "reinforcedReduced": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-61.94909978180964, -38.99113262219964]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "mhQX0REztU",
+      "properties": {
+        "id": "mhQX0REztU",
+        "name": "ARA General Belgrano",
+        "shortName": "GBE",
+        "sidc": "10033040001202020000",
+        "fillColor": "#aab074",
+        "reinforcedReduced": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-61.53, -55.4]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "FfAifXXyRE",
+      "properties": {
+        "id": "FfAifXXyRE",
+        "name": "ARA Almirante Irízar",
+        "shortName": "AIR",
+        "sidc": "10033000001301001900",
+        "fillColor": "#aab074",
+        "reinforcedReduced": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-36.474094, -54.286774]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "rQVoXIJpJw",
+      "properties": {
+        "id": "rQVoXIJpJw",
+        "name": "ARA Bahía Buen Suceso",
+        "shortName": "BBS",
+        "sidc": "10033030001301000000",
+        "description": "A Bahía Aguirre-class 5,000-ton fleet transport that served in the Argentine Navy from 1950 to 1982.",
+        "fillColor": "#aab074",
+        "reinforcedReduced": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-60.07669068838216, -51.95596463531349]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "V8ElpGSpvK",
+      "properties": {
+        "id": "V8ElpGSpvK",
+        "name": "ARA Bahía Paraíso",
+        "shortName": "BPA",
+        "sidc": "10033000001301000000",
+        "description": "The ship operated as a naval auxiliary vessel from 1981 to 1986 and served in the Falklands War as a troop transport as well as hospital ship. It was involved in transporting troops to Leith Harbour prior to the Invasion of South Georgia. ",
+        "fillColor": "#aab074",
+        "reinforcedReduced": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-36.684097226005825, -54.14272379683638]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "gAJzCZKNNd",
+      "properties": {
+        "id": "gAJzCZKNNd",
+        "name": "ARA Punta Médanos",
+        "shortName": "PME",
+        "sidc": "10033000001301100000",
+        "description": "",
+        "fillColor": "#aab074",
+        "reinforcedReduced": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-62.12078205207824, -38.90946877327505]
+      }
+    }
+  ]
+}

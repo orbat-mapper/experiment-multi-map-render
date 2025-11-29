@@ -11,11 +11,12 @@ import {
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
 import { ExternalLinkIcon } from "lucide-vue-next";
-import { defineAsyncComponent, shallowRef } from "vue";
+import { computed, defineAsyncComponent, shallowRef, watch } from "vue";
 import type { MapAdapter } from "@/multimaplib/adapters";
 import { createMapWrapper, type MapWrapper } from "@/multimaplib/common.ts";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/ui/mode-toggle";
+import type { FeatureCollection } from "geojson";
 
 const MaplibreMap = defineAsyncComponent(
   () => import("@/components/MaplibreMap.vue"),
@@ -34,6 +35,15 @@ const olMap = shallowRef<MapWrapper>();
 const mlMap = shallowRef<MapWrapper>();
 const leafletMap = shallowRef<MapWrapper>();
 const globeGLMap = shallowRef<MapWrapper>();
+
+const mapsLoaded = computed(() => {
+  return (
+    olMap.value !== undefined &&
+    mlMap.value !== undefined &&
+    leafletMap.value !== undefined &&
+    globeGLMap.value !== undefined
+  );
+});
 
 const cities: Array<{ name: string; coord: [number, number] }> = [
   { name: "Tromsø", coord: [18.9553, 69.6496] },
@@ -61,12 +71,20 @@ function onGlobeGLMapReady(adapter: MapAdapter) {
   globeGLMap.value = createMapWrapper(adapter);
 }
 
+const wrappers = [olMap, mlMap, leafletMap, globeGLMap];
 function goToPosition(coord: [number, number], zoom: number) {
-  const wrappers = [olMap, mlMap, leafletMap, globeGLMap];
   for (const wrapper of wrappers) {
     wrapper.value?.goToPosition(coord, zoom);
   }
 }
+
+watch(mapsLoaded, async () => {
+  // load scenario.json
+  const data = (await import("@/data/scenario.json")) as FeatureCollection;
+  for (const wrapper of wrappers) {
+    wrapper.value?.addGeoJSON?.(data);
+  }
+});
 </script>
 
 <template>
