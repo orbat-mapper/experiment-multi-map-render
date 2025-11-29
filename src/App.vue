@@ -8,6 +8,7 @@ import { defineAsyncComponent, shallowRef } from "vue";
 import type { MapAdapter } from "@/multimaplib/adapters";
 import { createMapWrapper, type MapWrapper } from "@/multimaplib/common.ts";
 import { Button } from "@/components/ui/button";
+import { ModeToggle } from "@/components/ui/mode-toggle";
 
 const MaplibreMap = defineAsyncComponent(
   () => import("@/components/MaplibreMap.vue"),
@@ -69,8 +70,9 @@ function goToPosition(coord: [number, number], zoom: number) {
       autoSaveId="map-grid-layout1"
     >
       <ResizablePanel :default-size="20" class="@container">
-        <div class="flex items-center justify-center">
+        <div class="flex items-center justify-between p-2">
           <span class="font-semibold">Multi map render</span>
+          <ModeToggle />
         </div>
         <div
           v-if="olMap && mlMap && leafletMap && globeGLMap"
