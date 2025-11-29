@@ -1,9 +1,16 @@
 <script setup lang="ts">
 import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
+import { ExternalLinkIcon } from "lucide-vue-next";
 import { defineAsyncComponent, shallowRef } from "vue";
 import type { MapAdapter } from "@/multimaplib/adapters";
 import { createMapWrapper, type MapWrapper } from "@/multimaplib/common.ts";
@@ -69,23 +76,39 @@ function goToPosition(coord: [number, number], zoom: number) {
       class="h-full w-full"
       autoSaveId="map-grid-layout1"
     >
-      <ResizablePanel :default-size="20" class="@container">
-        <div class="flex items-center justify-between p-2">
+      <ResizablePanel :default-size="20" class="@container p-2">
+        <div class="flex items-center justify-between">
           <span class="font-semibold">Multi map render</span>
-          <ModeToggle />
+          <div class="flex items-center">
+            <Button variant="link" asChild
+              ><a
+                href="https://github.com/orbat-mapper/experiment-multi-map-render"
+                target="_blank"
+                rel="noreferrer"
+                >GitHub<ExternalLinkIcon
+                  class="-ml-1 text-muted-foreground" /></a></Button
+            ><ModeToggle />
+          </div>
         </div>
-        <div
-          v-if="olMap && mlMap && leafletMap && globeGLMap"
-          class="grid grid-cols-2 @sm:grid-cols-3 @md:grid-cols-4 gap-2 p-2"
-        >
-          <Button
-            v-for="city in cities"
-            :key="city.name"
-            class=""
-            @click="goToPosition(city.coord, 5)"
-            >{{ city.name }}</Button
-          >
-        </div>
+
+        <Accordion type="single" collapsible default-value="item-1">
+          <AccordionItem value="item-1">
+            <AccordionTrigger>Fly to animation</AccordionTrigger>
+            <AccordionContent>
+              <div
+                class="grid grid-cols-2 @sm:grid-cols-3 @md:grid-cols-4 gap-2"
+              >
+                <Button
+                  v-for="city in cities"
+                  :key="city.name"
+                  class=""
+                  @click="goToPosition(city.coord, 5)"
+                  >{{ city.name }}</Button
+                >
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
       </ResizablePanel>
       <ResizableHandle />
       <ResizablePanel :default-size="50">
