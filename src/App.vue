@@ -4,14 +4,23 @@ import {
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
-import MaplibreMap from "@/components/MaplibreMap.vue";
-import OpenLayersMap from "@/components/OpenLayersMap.vue";
-import LeafletMap from "@/components/LeafletMap.vue";
-import GlobeGLMap from "@/components/GlobeGLMap.vue";
+import { defineAsyncComponent, shallowRef } from "vue";
 import type { MapAdapter } from "@/multimaplib/adapters";
-import { shallowRef } from "vue";
 import { createMapWrapper, type MapWrapper } from "@/multimaplib/common.ts";
 import { Button } from "@/components/ui/button";
+
+const MaplibreMap = defineAsyncComponent(
+  () => import("@/components/MaplibreMap.vue"),
+);
+const OpenLayersMap = defineAsyncComponent(
+  () => import("@/components/OpenLayersMap.vue"),
+);
+const LeafletMap = defineAsyncComponent(
+  () => import("@/components/LeafletMap.vue"),
+);
+const GlobeGLMap = defineAsyncComponent(
+  () => import("@/components/GlobeGLMap.vue"),
+);
 
 const olMap = shallowRef<MapWrapper>();
 const mlMap = shallowRef<MapWrapper>();
