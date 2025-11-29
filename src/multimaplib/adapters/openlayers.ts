@@ -56,5 +56,8 @@ export function createOpenLayersAdapter(olMap: OLMap): MapAdapter {
         callback,
       );
     },
+    cleanUp() {
+      olMap.setTarget(undefined);
+    },
   };
 }

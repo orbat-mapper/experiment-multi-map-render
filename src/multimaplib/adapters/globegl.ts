@@ -16,5 +16,8 @@ export function createGlobeGLAdapter(globe: GlobeInstance): MapAdapter {
       const lat = location[1] ?? 0;
       globe.pointOfView({ lat, lng, altitude }, 900);
     },
+    cleanUp() {
+      globe.dispose();
+    },
   };
 }

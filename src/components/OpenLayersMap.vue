@@ -8,7 +8,10 @@ import { type Coordinate } from "ol/coordinate";
 import { fromLonLat } from "ol/proj";
 import TileLayer from "ol/layer/Tile";
 import { OSM } from "ol/source";
-import { createOpenLayersAdapter } from "@/multimaplib/adapters";
+import {
+  createOpenLayersAdapter,
+  type MapAdapter,
+} from "@/multimaplib/adapters";
 
 interface Props {
   center?: Coordinate;
@@ -22,7 +25,7 @@ const props = withDefaults(defineProps<Props>(), {
   baseLayerName: "osm",
 });
 const emit = defineEmits(["ready", "moveend"]);
-
+let adapter: MapAdapter;
 const mapRoot = ref();
 let olMap: OLMap;
 
@@ -48,13 +51,12 @@ onMounted(async () => {
     }),
   });
 
-  const adapter = createOpenLayersAdapter(olMap);
-
+  adapter = createOpenLayersAdapter(olMap);
   emit("ready", adapter);
 });
 
 onUnmounted(() => {
-  olMap.setTarget(undefined);
+  adapter?.cleanUp();
 });
 </script>
 

@@ -3,6 +3,7 @@ import type { MapAdapter } from "@/multimaplib/adapters";
 export type MapWrapper = {
   goToPosition(location: Position, zoom: number): void;
   addGeoJSON?(geojson: FeatureCollection): void;
+  cleanUp?(): void;
 };
 
 export function createMapWrapper(adapter?: MapAdapter): MapWrapper {
@@ -23,5 +24,6 @@ export function createMapWrapper(adapter?: MapAdapter): MapWrapper {
   return {
     goToPosition,
     addGeoJSON,
+    cleanUp: adapter?.cleanUp,
   };
 }

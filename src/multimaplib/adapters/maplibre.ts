@@ -11,5 +11,8 @@ export function createMaplibreAdapter(mlMap: MlMap): MapAdapter {
         zoom: zoom,
       });
     },
+    cleanUp() {
+      mlMap.remove();
+    },
   };
 }

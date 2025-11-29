@@ -2,12 +2,13 @@
 import { onMounted, onUnmounted, useTemplateRef } from "vue";
 import { GlobeControl, Map as MlMap, NavigationControl } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
-import { createMaplibreAdapter } from "@/multimaplib/adapters";
+import { createMaplibreAdapter, type MapAdapter } from "@/multimaplib/adapters";
 
 const emit = defineEmits(["ready"]);
 
 const mapContainerElement = useTemplateRef("mapContainerElement");
 let mlMap: MlMap;
+let mapAdapter: MapAdapter | undefined;
 
 onMounted(async () => {
   mlMap = new MlMap({
@@ -34,12 +35,13 @@ onMounted(async () => {
   });
 
   mlMap.on("load", async () => {
-    emit("ready", createMaplibreAdapter(mlMap));
+    mapAdapter = createMaplibreAdapter(mlMap);
+    emit("ready", mapAdapter);
   });
 });
 
 onUnmounted(() => {
-  mlMap?.remove();
+  mapAdapter?.cleanUp();
 });
 </script>
 <template>
