@@ -12,5 +12,9 @@ export function createLeafletAdapter(leafletMap: LMap): MapAdapter {
         duration: 0.9,
       });
     },
+
+    cleanUp() {
+      leafletMap?.remove();
+    },
   };
 }

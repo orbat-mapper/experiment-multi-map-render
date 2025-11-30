@@ -17,7 +17,8 @@ export function createGlobeGLAdapter(globe: GlobeInstance): MapAdapter {
       globe.pointOfView({ lat, lng, altitude }, 900);
     },
     cleanUp() {
-      globe.dispose();
+      // https://github.com/vasturiano/globe.gl/issues/15
+      globe._destructor();
     },
   };
 }

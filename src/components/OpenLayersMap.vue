@@ -25,7 +25,7 @@ const props = withDefaults(defineProps<Props>(), {
   baseLayerName: "osm",
 });
 const emit = defineEmits(["ready", "moveend"]);
-let adapter: MapAdapter;
+let mapAdapter: MapAdapter;
 const mapRoot = ref();
 let olMap: OLMap;
 
@@ -51,12 +51,12 @@ onMounted(async () => {
     }),
   });
 
-  adapter = createOpenLayersAdapter(olMap);
-  emit("ready", adapter);
+  mapAdapter = createOpenLayersAdapter(olMap);
+  emit("ready", mapAdapter);
 });
 
 onUnmounted(() => {
-  adapter?.cleanUp();
+  mapAdapter?.cleanUp();
 });
 </script>
 
