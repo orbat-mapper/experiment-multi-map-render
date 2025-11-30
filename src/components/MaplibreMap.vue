@@ -2,16 +2,21 @@
 import { onMounted, onUnmounted, useTemplateRef } from "vue";
 import { GlobeControl, Map as MlMap, NavigationControl } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
-import { createMaplibreAdapter } from "@/multimaplib/adapters";
+import { createMaplibreAdapter, type MapAdapter } from "@/multimaplib/adapters";
 
 const emit = defineEmits(["ready"]);
 
-const mapContainerElement = useTemplateRef("mapContainerElement");
+const mapContainerElement = useTemplateRef<HTMLElement>("mapContainerElement");
 let mlMap: MlMap;
+let mapAdapter: MapAdapter | undefined;
 
 onMounted(async () => {
+  if (!mapContainerElement.value) {
+    console.error("Map container element is not available.");
+    return;
+  }
   mlMap = new MlMap({
-    container: mapContainerElement.value as HTMLElement,
+    container: mapContainerElement.value,
     // style: "https://demotiles.maplibre.org/style.json", // style URL
     style: "https://tiles.openfreemap.org/styles/positron", // style URL
     center: [0, 0], // starting position [lng, lat]
@@ -34,12 +39,13 @@ onMounted(async () => {
   });
 
   mlMap.on("load", async () => {
-    emit("ready", createMaplibreAdapter(mlMap));
+    mapAdapter = createMaplibreAdapter(mlMap);
+    emit("ready", mapAdapter);
   });
 });
 
 onUnmounted(() => {
-  mlMap?.remove();
+  mapAdapter?.cleanUp();
 });
 </script>
 <template>

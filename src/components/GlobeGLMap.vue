@@ -7,13 +7,14 @@ import {
   nextTick,
 } from "vue";
 import Globe, { type GlobeInstance } from "globe.gl";
-import { createGlobeGLAdapter } from "@/multimaplib/adapters";
+import { createGlobeGLAdapter, type MapAdapter } from "@/multimaplib/adapters";
 
 const emit = defineEmits(["ready"]);
 
-const mapContainerElement = useTemplateRef("mapContainerElement");
+const mapContainerElement = useTemplateRef<HTMLElement>("mapContainerElement");
 const globeInstance = shallowRef<GlobeInstance>();
 let resizeObserver: ResizeObserver | null = null;
+let mapAdapter: MapAdapter;
 
 function updateGlobeSize() {
   const container = mapContainerElement.value as unknown as HTMLElement;
@@ -25,7 +26,11 @@ function updateGlobeSize() {
 }
 
 onMounted(async () => {
-  const container = mapContainerElement.value as unknown as HTMLElement;
+  if (!mapContainerElement.value) {
+    console.error("Map container element is not available.");
+    return;
+  }
+  const container = mapContainerElement.value;
 
   // Wait for next tick to ensure container has dimensions
   await nextTick();
@@ -64,15 +69,14 @@ onMounted(async () => {
     updateGlobeSize();
   });
   resizeObserver.observe(container);
-
-  emit("ready", createGlobeGLAdapter(globe));
+  mapAdapter = createGlobeGLAdapter(globe);
+  emit("ready", mapAdapter);
 });
 
 onUnmounted(() => {
   window.removeEventListener("resize", updateGlobeSize);
   resizeObserver?.disconnect();
-  // _destructor is the cleanup method exposed by globe.gl (kapsule-based component)
-  globeInstance.value?._destructor();
+  mapAdapter?.cleanUp();
 });
 </script>
 <template>

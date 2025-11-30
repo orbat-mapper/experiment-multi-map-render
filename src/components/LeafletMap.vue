@@ -2,15 +2,20 @@
 import { onMounted, onUnmounted, useTemplateRef } from "vue";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-import { createLeafletAdapter } from "@/multimaplib/adapters";
+import { createLeafletAdapter, type MapAdapter } from "@/multimaplib/adapters";
 
 const emit = defineEmits(["ready"]);
 
-const mapContainerElement = useTemplateRef("mapContainerElement");
+const mapContainerElement = useTemplateRef<HTMLElement>("mapContainerElement");
 let leafletMap: L.Map;
+let mapAdapter: MapAdapter;
 
 onMounted(async () => {
-  leafletMap = L.map(mapContainerElement.value as HTMLElement, {
+  if (!mapContainerElement.value) {
+    console.error("Map container element is not available.");
+    return;
+  }
+  leafletMap = L.map(mapContainerElement.value, {
     center: [0, 0],
     zoom: 3,
   });
@@ -21,12 +26,13 @@ onMounted(async () => {
   }).addTo(leafletMap);
 
   leafletMap.whenReady(() => {
-    emit("ready", createLeafletAdapter(leafletMap));
+    mapAdapter = createLeafletAdapter(leafletMap);
+    emit("ready", mapAdapter);
   });
 });
 
 onUnmounted(() => {
-  leafletMap?.remove();
+  mapAdapter?.cleanUp();
 });
 </script>
 <template>
